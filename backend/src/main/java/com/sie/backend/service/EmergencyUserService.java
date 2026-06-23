@@ -11,7 +11,14 @@ public class EmergencyUserService {
 
     private final Map<String, EmergencyUser> userDb = Map.of(
             "ednilson_123",
-            new EmergencyUser("ednilson_123", "Ednilson", "+5511999999999")
+            new EmergencyUser(
+                    "ednilson_123",
+                    "Ednilson N. Martiniano",
+                    "O+",
+                    "Nenhuma severa registrada",
+                    "Contato de Teste",
+                    "+5511960652530"
+            )
     );
 
     public Optional<EmergencyUser> findByUserId(String userId) {

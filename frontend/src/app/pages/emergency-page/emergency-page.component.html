@@ -1,0 +1,60 @@
+<header class="topbar">
+  <a routerLink="/" class="brand">AhLembrei</a>
+  <a routerLink="/etiqueta/{{ profile()?.userId }}" class="link">Etiqueta QR</a>
+</header>
+
+<main class="page">
+  @if (loading()) {
+    <p class="state">Carregando informacoes de emergencia...</p>
+  } @else if (loadError()) {
+    <section class="alert-box">
+      <h1>Perfil indisponivel</h1>
+      <p>{{ loadError() }}</p>
+      <a routerLink="/" class="btn-call">Voltar ao inicio</a>
+    </section>
+  } @else if (profile()) {
+    <section class="alert-box">
+      <h1>ATENCAO MEDICA</h1>
+      <p><strong>Nome:</strong> {{ profile()!.nome }}</p>
+      <p><strong>Tipo Sanguineo:</strong> {{ profile()!.tipoSanguineo }}</p>
+      <p><strong>Alergias:</strong> {{ profile()!.alergias }}</p>
+    </section>
+
+  @if (needsHttpsForGps()) {
+    <section class="gps-hint">
+      GPS no celular exige HTTPS. Para teste local use <strong>npm run start:ssl</strong>
+      e abra <strong>https://SEU_IP:4200</strong>.
+    </section>
+  }
+
+    <section class="actions">
+      <a class="btn-call" [href]="'tel:' + profile()!.contatoTelefone">
+        LIGAR PARA CONTATO ({{ profile()!.contatoNome }})
+      </a>
+
+      @if (!alertSent()) {
+        <button class="btn-sos" type="button" [disabled]="sending()" (click)="enviarAlerta()">
+          {{ sending() ? 'ENVIANDO...' : 'ENVIAR ALERTA DE EMERGENCIA' }}
+        </button>
+      }
+
+      <button
+        class="btn-sos btn-gps"
+        type="button"
+        [disabled]="sending()"
+        (click)="enviarLocalizacaoGps()"
+      >
+        {{ sending() ? 'CAPTURANDO GPS...' : 'ENVIAR LOCALIZACAO GPS' }}
+      </button>
+
+      <p
+        class="status"
+        [class.success]="statusTone() === 'success'"
+        [class.error]="statusTone() === 'error'"
+        [class.warning]="statusTone() === 'warning'"
+      >
+        {{ statusMessage() }}
+      </p>
+    </section>
+  }
+</main>

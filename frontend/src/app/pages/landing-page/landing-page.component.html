@@ -1,0 +1,61 @@
+<header class="header">
+  <div class="container header-inner">
+    <a routerLink="/" class="brand">
+      <img src="favicon.svg" alt="AhLembrei" width="36" height="36" />
+      <span>AhLembrei</span>
+    </a>
+    <nav>
+      <a routerLink="/e/ednilson_123" class="nav-link">Demonstracao</a>
+      <a routerLink="/etiqueta/ednilson_123" class="btn btn-outline">Etiqueta QR</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-content">
+      <p class="badge">Seguranca em primeiro lugar</p>
+      <h1>Suas informacoes de emergencia <span>sempre acessiveis</span></h1>
+      <p class="hero-text">
+        Registre e disponibilize suas informacoes pessoais e contatos de emergencia para acesso
+        rapido em situacoes criticas. Seguro, rapido e confiavel.
+      </p>
+      <div class="hero-actions">
+        <a routerLink="/e/ednilson_123" class="btn btn-primary">Comecar Agora - Gratis</a>
+        <a routerLink="/e/ednilson_123" class="btn btn-secondary">Ver Demonstracao</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2>Tudo que voce precisa em emergencias</h2>
+      <p class="section-lead">
+        Funcionalidades pensadas para garantir que suas informacoes importantes estejam sempre
+        disponiveis quando mais precisar.
+      </p>
+      <div class="features-grid">
+        @for (feature of features; track feature.title) {
+          <article class="feature-card">
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta-box">
+      <h2>Pronto para ter suas informacoes sempre seguras?</h2>
+      <p>Cadastre-se gratuitamente e tenha acesso imediato a todas as funcionalidades basicas.</p>
+      <a routerLink="/e/ednilson_123" class="btn btn-primary">Criar Conta Gratuita</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+  <p>AhLembrei - Sistema de Identificacao de Emergencia via QR Code</p>
+  </div>
+</footer>

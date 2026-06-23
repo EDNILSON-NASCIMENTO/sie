@@ -1,0 +1,160 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #e5e7eb;
+  backdrop-filter: blur(8px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #111827;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-link {
+  color: #4b5563;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero {
+  background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 55%, #ffffff 100%);
+  padding: 72px 0 88px;
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.badge {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.hero h1 {
+  margin: 0 0 20px;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.1;
+  color: #111827;
+}
+
+.hero h1 span {
+  color: #2563eb;
+}
+
+.hero-text {
+  margin: 0 0 28px;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.features {
+  padding: 72px 0;
+}
+
+.features h2,
+.cta h2 {
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: #111827;
+}
+
+.section-lead {
+  margin: 0 auto 40px;
+  max-width: 640px;
+  text-align: center;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.feature-card h3 {
+  margin: 0 0 8px;
+  color: #1f2937;
+}
+
+.feature-card p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.cta {
+  padding: 0 0 72px;
+}
+
+.cta-box {
+  text-align: center;
+  border-radius: 16px;
+  padding: 48px 24px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
+}
+
+.cta-box p {
+  margin: 0 0 24px;
+  color: #e0e7ff;
+}
+
+.footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 24px 0;
+  color: #6b7280;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  nav .nav-link {
+    display: none;
+  }
+}

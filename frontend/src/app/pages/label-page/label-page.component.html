@@ -1,0 +1,28 @@
+<header class="topbar no-print">
+  <a routerLink="/" class="brand">AhLembrei</a>
+  <a routerLink="/e/{{ profile()?.userId }}" class="link">Pagina de emergencia</a>
+</header>
+
+<main class="page" [class.printing-mode]="printingMode()">
+  @if (loading()) {
+    <p class="state no-print">Carregando etiqueta...</p>
+  } @else if (loadError()) {
+    <p class="state no-print">{{ loadError() }}</p>
+  } @else if (profile()) {
+    <section class="label-card no-print">
+      <h1>Etiqueta temporaria com QR Code</h1>
+      <p>Recomendacao: imprimir em matriz 4x4 cm para uso com papel transfer temporario.</p>
+      <p class="url-preview">Para GPS no celular, prefira HTTPS (npm run start:ssl).</p>
+      <p class="url-preview">URL: {{ qrPayload() }}</p>
+      <button class="btn-print" type="button" (click)="imprimirEtiquetaTemporaria()">
+        IMPRIMIR ETIQUETA TEMPORARIA
+      </button>
+    </section>
+
+    <section class="label-preview" id="label-print-area">
+      <img [src]="qrCodeUrl()" alt="QR Code de emergencia" width="170" height="170" />
+      <p class="label-name">{{ profile()!.nome }}</p>
+      <p class="label-blood">Sangue {{ profile()!.tipoSanguineo }} | AhLembrei</p>
+    </section>
+  }
+</main>

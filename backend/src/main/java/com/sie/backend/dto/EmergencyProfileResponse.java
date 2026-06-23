@@ -1,11 +1,11 @@
-package com.sie.backend.model;
+package com.sie.backend.dto;
 
-public record EmergencyUser(
+public record EmergencyProfileResponse(
         String userId,
         String nome,
         String tipoSanguineo,
         String alergias,
         String contatoNome,
-        String telefoneEmergencia
+        String contatoTelefone
 ) {
 }
